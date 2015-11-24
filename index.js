@@ -8,7 +8,6 @@ var noteStore = client.getNoteStore();
 
 http.request(config.heroku, function(res) {
   var body = '';
-  // res.pipe(process.stdout);
   res.setEncoding('utf8');
   res.on('data', function (chunk) {
     body += chunk;
@@ -30,17 +29,14 @@ function createNewNote(ip) {
     if (err) {
       console.log(err);
     } else {
-      // console.log("Successfully created a new note with GUID: " + createdNote.guid);
       fs.writeFile(savePath, createdNote.guid, function (err) {
-          if (err) throw err;
-          // console.log('It\'s saved!');
+        if (err) throw err;
       });
     }
   });
 }
 
 function updateExistingNote(guid, ip) {
-  //get the note
   noteStore.getNote(config.key, guid, false, false, false, false, function(err, note) {
     note.title = 'IP Address';
     note.content = '<?xml version="1.0" encoding="UTF-8"?>';
@@ -50,8 +46,6 @@ function updateExistingNote(guid, ip) {
     noteStore.updateNote(config.key, note, function(err) {
        if (err) {
          console.log(err);
-       } else {
-        // console.log('Note updated');
        }
     });
   });
