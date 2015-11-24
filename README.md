@@ -29,13 +29,15 @@ The "heroku" value is your heroku server that this code will query. The server o
 
 The "guidfile" is just the name of the text file that you want the application to read/create.  The only thing it will contain is the guid of the Evernote note that is created.  If you delete this file, the application will simply create a new note the next time it runs.  This value should only be a name, not a full path.  The file will be created in the same directory as the code.
 
-If you decide to work in the Evernote sandbox before running this against your production Evernote account, you'll need to change the following line:
+If you decide to work in the Evernote sandbox before running this against your production Evernote account, you'll need to change the following lines:
 ```
 var config = require('./production.config.json');
+var client = new Evernote.Client({token: config.key, sandbox: false});
 ```
 to this:
 ```
 var config = require('./staging.config.json');
+var client = new Evernote.Client({token: config.key, sandbox: true});
 ```
 
 ## Evernote Key
