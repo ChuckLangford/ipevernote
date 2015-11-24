@@ -1,0 +1,23 @@
+{
+  "name": "ipevernote",
+  "version": "1.0.0",
+  "description": "A node script that works in conjunction with a heroku instance to get your public ip address and then save that information in an Evernote note.",
+  "main": "index.js",
+  "dependencies": {
+    "evernote": "^1.25.82"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChuckLangford/ipevernote.git"
+  },
+  "author": "Chuck Langford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChuckLangford/ipevernote/issues"
+  },
+  "homepage": "https://github.com/ChuckLangford/ipevernote#readme"
+}

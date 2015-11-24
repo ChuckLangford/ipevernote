@@ -1,0 +1,5 @@
+node_modules
+*.txt
+*.swp
+production.config.json
+sandbox.config.json
